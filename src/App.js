@@ -1,34 +1,34 @@
 import React from "react";
-
+import Header from "./Header/Header";
 import "./App.css";//👍
 import "./media.css";
+import Dashboard from './Dashboard/Dashboard';
+import Profile from "./Profile/Profile";
 
-
-import Dialogs from "./Dialogs/Dialogs";
-
-
-// function Header(props) {
-//   return (
-//     <header className="Header">
-//       <img src="" alt="" />
-//       <ul>
-//         <li><a href="#s"></a></li>
-//         <li><a href="#s"></a></li>
-//         <li><a href="#s"></a></li>
-//         <li><a href="#s"></a></li>
-//         <li><a href="#s"></a></li>
-//       </ul>
-//     </header>)
-// }
 
 function App(props) {
   return (
     <div className="App">
-      {/* <Header>Hello</Header> */}
-      {/* <Header /> */}
-      {/* <main></main> */}
-      {/* <footer></footer> */}
-      <Dialogs />
+      <Header />
+
+      <div className="flexible">
+        <Dashboard />
+        {/* <Dialogs /> */}
+        <main className="main">
+        <Profile />
+          {
+            // if(url === "Profile") {
+            //   <Profile />
+
+            // }
+            // else if(url === "Settings" {
+            //   <Settings />
+
+            // })
+          }
+        </main>
+      </div>
+
     </div>
   )
 }

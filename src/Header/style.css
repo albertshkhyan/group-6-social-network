@@ -1,0 +1,9 @@
+.Header {
+    background: green;
+}
+.imageContainer {
+    width: 5%;
+}
+.imageContainer img {
+    width: 100%;
+}
