@@ -14,7 +14,7 @@ const Dashboard = (props) => {
                 <li><a href="#News">News</a></li>
                 <li><a href="#Music">Music</a></li>
                 <li><a href="#Settings">Settings</a></li>
-                <li><a href="#Users">Users</a></li>
+                <li><a href="#Users">Users</a> </li>
             </ul>
         </nav>
     </div>
