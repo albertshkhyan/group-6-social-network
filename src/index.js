@@ -2,11 +2,16 @@ import ReactDOM from 'react-dom';
 import React from "react";
 
 import App, {x} from './App.js';
-console.log('x', x);
 // console.log('ReactDOM', ReactDOM);
+import { BrowserRouter } from "react-router-dom";
+
+
+console.log('x', x);
 
 ReactDOM.render(
-  <App />,
+  <BrowserRouter>
+     <App />
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
