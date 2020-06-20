@@ -2,19 +2,23 @@ import React from "react";
 
 import "./style.css";
 
+import {
+  // Link
+  NavLink
+} from "react-router-dom";
 
 const Dashboard = (props) => {
   return (
     <div className="Dashboard">
         <nav>
             <ul>
-                <li><a href="#Profile">Profile</a></li>
-                <li><a href="#Login">Login</a></li>
-                <li><a href="#Messages">Messages</a></li>
-                <li><a href="#News">News</a></li>
-                <li><a href="#Music">Music</a></li>
-                <li><a href="#Settings">Settings</a></li>
-                <li><a href="#Users">Users</a></li>
+                <li><NavLink activeClassName="barColors" to="/profile">Profile</NavLink></li>
+                <li><NavLink activeClassName="barColors" to="/login">Login</NavLink></li>
+                <li><NavLink activeClassName="barColors" to="/messages">Messages</NavLink></li>
+                <li><NavLink activeClassName="barColors" to="/news">News</NavLink></li>
+                <li><NavLink activeClassName="barColors" to="/music">Music</NavLink></li>
+                <li><NavLink activeClassName="barColors" to="/settings">Settings</NavLink></li>
+                <li><NavLink activeClassName="barColors" to="/users">Users</NavLink></li>
             </ul>
         </nav>
     </div>
