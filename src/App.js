@@ -21,53 +21,25 @@ import {
 function App(props) {
   return (
     <div className="App">
-      <Header />
-
+      <Header menu={["About"]}/>
       <div className="flexible">
         <Dashboard />
-        {/* <Dialogs /> */}
         <main className="main">
           <Switch>
-
-            <Route path="/login">
-              <Login />
-            </Route>
-
-            <Route path="/profile">
-              <Profile />
-            </Route>
-
-            <Route path="/messages">
-              <Messages/>
-            </Route>
-
-            <Route path="/news">
-              <News/>
-            </Route>
-
-            <Route path="/music">
-              <Music/>
-            </Route>
-
-            <Route path="/settings">
-              <Settings/>
-            </Route>
-
-            <Route path="/users">
-              <Users/>
-            </Route>
-
+            <Route exact path="/profile" component={() => (
+              <Profile name="Profile page" />
+            )}/>
+            {/* <Route path="/profile">
+              <Profile name={123} />
+            </Route> */}
+            {/* <Route path="/profile/123" component={() => <h2>User ALex page</h2> }/> */}
+            <Route path="/login" component={Login}/>
+            <Route path="/messages" component={Messages}/>
+            <Route path="/news" component={News}/>
+            <Route path="/music" component={Music}/>
+            <Route path="/settings" component={Settings}/>
+            <Route path="/users" component={Users}/>
           </Switch>
-          {
-            // if(url === "Profile") {
-            //   <Profile />
-
-            // }
-            // else if(url === "Settings" {
-            //   <Settings />
-
-            // })
-          }
         </main>
       </div>
 
