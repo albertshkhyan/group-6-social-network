@@ -4,7 +4,12 @@ import "./App.css";//👍
 import "./media.css";
 import Dashboard from './Dashboard/Dashboard';
 import Profile from "./Profile/Profile";
+import Login from './Login/Login';
 
+import {
+  Switch,
+  Route,
+} from "react-router-dom";
 
 function App(props) {
   return (
@@ -15,7 +20,18 @@ function App(props) {
         <Dashboard />
         {/* <Dialogs /> */}
         <main className="main">
-        <Profile />
+
+          <Switch>
+
+            <Route path="/login">
+              <Login />
+            </Route>
+
+            <Route path="/profile">
+              <Profile />
+            </Route>
+
+          </Switch>
           {
             // if(url === "Profile") {
             //   <Profile />
@@ -33,4 +49,4 @@ function App(props) {
   )
 }
 export const x = 10;
-export default App ;
+export default App;
