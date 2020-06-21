@@ -3,15 +3,14 @@ import React from "react";
 
 import App, {x} from './App.js';
 // console.log('ReactDOM', ReactDOM);
-import {BrowserRouter } from "react-router-dom";
-
+import { BrowserRouter } from "react-router-dom";
 
 
 console.log('x', x);
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+     <App />
   </BrowserRouter>,
   document.getElementById('root')
 );
