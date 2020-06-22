@@ -2,7 +2,7 @@ import React from 'react';
 import Post from './Post';
 
 import s from"./style.module.css";
-console.log('s', s);
+// console.log('s', s);
 
 const MyPosts = (props) => {
     return (

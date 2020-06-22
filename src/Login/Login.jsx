@@ -2,10 +2,15 @@ import React from "react";
 
 
 
+
 const Login = (props) => {
   return (
     <div className="Login">
-      Login
+            <div className="loginContainer">
+                
+            </div>
+            {props.logn}
+
     </div>
   );
 };
