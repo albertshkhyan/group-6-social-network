@@ -8,8 +8,9 @@ const LoginForm = (props) => {
         <div className={s.LoginForm}>
             <h2>Login</h2>
             <div>
-                <textarea />
-                <textarea />
+                <input type="Email"/>
+                <input type="Password"/>
+                <input type="checkbox"/>
             </div>
             <div>
                 <button>Sumbit</button>
