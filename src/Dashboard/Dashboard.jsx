@@ -15,7 +15,7 @@ const Dashboard = (props) => {
             <ul>
                 <li><NavLink activeClassName="menuColor" to="/profile">Profile</NavLink></li>
                 <li><NavLink activeClassName="menuColor" to="/login">Login</NavLink></li>
-                <li><NavLink activeClassName="menuColor" to="/messages">Messages</NavLink></li>
+                <li><NavLink activeClassName="menuColor" to="/dialogs">Messages</NavLink></li>
                 <li><NavLink activeClassName="menuColor" to="/news">News</NavLink></li>
                 <li><NavLink activeClassName="menuColor" to="/music">Music</NavLink></li>
                 <li><NavLink activeClassName="menuColor" to="/settings">Settings</NavLink></li>

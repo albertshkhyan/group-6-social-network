@@ -1,6 +1,6 @@
 import React from "react";
 
-import logoHeader from "../assets/Oikya_Front_Logo.png";
+import logoHeader from "../../../../assets/Oikya_Front_Logo.png";
 
 import "./style.css";
 

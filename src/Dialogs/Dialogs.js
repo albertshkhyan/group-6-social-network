@@ -1,5 +1,6 @@
 //1
 import React from "react";
+import Message from "./Message/Message";
 
 import "./style.css";
 // import "./App.css";//❌
@@ -8,7 +9,7 @@ import "./style.css";
 function Dialogs(props) {
     return (
         <div className="Dialogs">
-            <h1 className="title">Diolgs component </h1>
+            <Message />
         </div>
     )
 }

@@ -1,22 +1,17 @@
-import React from 'react';
-import Login from './Login';
+import React from "react";
+import Login from "./Login";
 
-import s from"./style.module.css";
+import s from "./style.module.css";
 
+//LoginForm  for validation
+//form - collect and send server, validatioin
 const LoginForm = (props) => {
-    return (
-        <div className={s.LoginForm}>
-            <h2>Login</h2>
-            <div>
-                <input type="Email"/>
-                <input type="Password"/>
-                <input type="checkbox"/>
-            </div>
-            <div>
-                <button>Sumbit</button>
-            </div>
-
-        </div>
-    )
-}
+  return (
+    <div>
+      <form className={s.LoginForm}>
+        <Login /> 
+      </form>
+    </div>
+  );
+};
 export default LoginForm;
