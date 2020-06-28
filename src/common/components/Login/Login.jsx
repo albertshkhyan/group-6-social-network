@@ -21,7 +21,7 @@ const Login = (props) => {
           <input type="checkbox" />
         </div>
         <div>
-          <button>Sumbit</button>
+          <button>Submit</button>
         </div>
       </div>
   )

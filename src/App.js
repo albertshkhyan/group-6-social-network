@@ -2,16 +2,16 @@ import React from "react";
 import Header from "./common/components/containers/Header/Header";
 import "./App.css";//👍
 import "./media.css";
-import Dashboard from './Dashboard/Dashboard';
-import Profile from "./Profile/Profile";
-import LoginForm from "./Login/LoginForm";
-import News from "./News/News";
-import Music from "./Music/Music";
-import Settings from "./Settings/Settings";
-import Users from "./Users/Users";
+import Dashboard from '../src/common/components/Dashboard/Dashboard';
+import Profile from "../src/common/components/Profile/Profile";
+import LoginForm from "./common/components/Login/LoginForm";
+import News from "./common/components/News/News";
+import Music from "./common/components/Music/Music";
+import Settings from "./common/components/Settings/Settings";
+import Users from "./common/components/Users/Users";
 
 
-import Dialogs from './Dialogs/Dialogs';
+import Dialogs from '../src/common/components/Dialogs/Dialogs';
 
 import {
   Switch,
