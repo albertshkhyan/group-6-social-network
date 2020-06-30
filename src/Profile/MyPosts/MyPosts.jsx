@@ -2,9 +2,22 @@ import React from 'react';
 import Post from './Post';
 
 import s from"./style.module.css";
-// console.log('s', s);
+
+
+
+
+const posts = [
+    {id:"0", post: "new post"},
+    {id:"1", post: "blablabla"},
+    {id:"2", post: "blabla"},
+    {id:"3", post: "It's my first posts"},
+    {id:"4", post: "Hi, how are you?"},
+]
 
 const MyPosts = (props) => {
+
+    const postArrayComp = posts.map(item => <Post post={item.post} id={item.id}/>)
+
     return (
         <div className={s.MyPosts}>
             <h2>My posts</h2>
@@ -14,14 +27,9 @@ const MyPosts = (props) => {
             <div>
                 <button>Add post</button>
             </div>
-
-
+ 
             <div className={s.postsContainer}>
-                <Post post="new post"/>
-                <Post post="blablabla"/>
-                <Post post="blabla"/>
-                <Post post="It's my first posts"/>
-                <Post post="Hi, how are you?"/>
+                {postArrayComp}
             </div>
         </div>
     )

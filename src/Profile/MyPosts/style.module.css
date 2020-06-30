@@ -1,5 +1,10 @@
 /* module css -um petqa ogtagorcel camelCase*/
 
-.postsContainer {
-border: 1px solid;
+.imageContainer{
+    max-width: 70px;
+    margin: 10px;
+}
+
+.imageContainer img{
+    width: 100%;
 }
