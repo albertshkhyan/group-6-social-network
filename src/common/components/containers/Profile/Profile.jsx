@@ -3,13 +3,16 @@ import React from 'react';
 
 import "./style.css";
 import ProfileInfo from './ProfileInfo';
-import MyPosts from '../../sections/MyPosts/MyPosts';
+import MyPosts from '../../../components/sections/MyPosts/MyPosts';
 
 //2
+
 function Profile(props) {
+
+
     return <div className="Profile">
         <ProfileInfo />
-        <MyPosts />
+        <MyPosts posts = {props.posts} />
         
         
     </div>

@@ -4,17 +4,10 @@ import Post from './Post';
 import s from"./style.module.css";
 
 
-const posts = [
-    {id: "1",post : "new post"},
-    {id: "2",post : "blablabla"},
-    {id: "3",post : "blabla"},
-    {id: "4",post : "It's my first posts"},
-    {id: "5",post : "Hi, how are you?"},
-] 
-
 const MyPosts = (props) => {
-
-    const postArrayComp = posts.map(item => <Post post={item.post} id={item.id}/>)
+    debugger;
+    const postArrayComp = props.posts.map(item => <Post key={item.id} post={item.post} id={item.id}/>)
+    // const postArrayComp = posts.map(item => <div key={item.id}>hello</div>)
 
     return (
         <div className={s.MyPosts}>

@@ -2,26 +2,26 @@ import React from "react";
 import Header from "./common/components/containers/Header/Header";
 import "./App.css";//👍
 import "./media.css";
-import Dashboard from './Dashboard/Dashboard';
-import Profile from "./Profile/Profile";
-import News from "./News/News";
-import Music from "./Music/Music";
+import Dashboard from './common/components/containers/Dashboard/Dashboard';
+import Profile from "./common/components/containers/Profile/Profile";
+import News from "./common/components/containers/News/News";
+import Music from "./common/components/containers/Music/Music";
 import Settings from "./Settings/Settings";
-import Users from "./Users/Users";
+import Users from "./common/components/containers/Users/Users";
 
 
-import Dialogs from './Dialogs/Dialogs';
+import Dialogs from './common/components/containers/Dialogs/Dialogs';
 
-import Login from './Login/Login';
+import Login from './common/components/sections/Login/Login';
 
 import {
   Switch,
   Route,
 } from "react-router-dom";
 
-function App(props) {
-  debugger
 
+function App(props) {
+  console.log('props', props);
   return (
     <div className="App">
       <Header menu={["About"]}/>
@@ -30,7 +30,7 @@ function App(props) {
         <main className="main">
           <Switch>
             <Route exact path="/profile" component={() => (
-              <Profile name="Profile page" />
+              <Profile name="Profile page" posts={props.posts} />
             )}/>
             {/* <Route path="/profile">
               <Profile name={123} />
