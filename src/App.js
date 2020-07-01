@@ -4,7 +4,6 @@ import "./App.css";//👍
 import "./media.css";
 import Dashboard from './Dashboard/Dashboard';
 import Profile from "./Profile/Profile";
-import LoginForm from "./Login/LoginForm";
 import News from "./News/News";
 import Music from "./Music/Music";
 import Settings from "./Settings/Settings";
@@ -12,6 +11,8 @@ import Users from "./Users/Users";
 
 
 import Dialogs from './Dialogs/Dialogs';
+
+import Login from './Login/Login';
 
 import {
   Switch,
@@ -35,8 +36,7 @@ function App(props) {
               <Profile name={123} />
             </Route> */}
             {/* <Route path="/profile/123" component={() => <h2>User ALex page</h2> }/> */}
-            {/* <Route path="/login" component={Login}/> */}
-            <Route path="/login" component={LoginForm}/>
+            <Route path="/login" component={Login}/>
             <Route exact path="/dialogs" component={Dialogs}/>
             <Route path="/dialogs/123" component={() => <h2>dialogs123</h2>}/>
             <Route path="/news" component={News}/>

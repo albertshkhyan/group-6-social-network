@@ -1,12 +1,19 @@
 import React from 'react';
 
+import s from './style.module.css';
+
+
 const Post = (props) => {
     return (
         <div className="Post">
-            <div className="image-container">
-                <img src="https://lh3.googleusercontent.com/proxy/F8kSdBVI8bbDzmPQjWdYRXB2HmnnRN5UCeA1h07eOdXUgy61rfwaMrzvpHa8SLzlDLMi_TbyRqyLBDIFH3Wb-PUha8JlVmVTT8n7hodxBgqfvh0Sc_TD0g" alt=""/>
+            <div className="flexible aEnd">
+                <div className={s.imageContainer}>
+                    <img src="https://www.sololearn.com/Icons/Avatars/4604247.jpg" alt=""/>
+                </div>
+                <div>
+                    {props.post}
+                </div>
             </div>
-            {props.post}
         </div>
     )
 }
