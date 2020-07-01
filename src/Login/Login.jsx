@@ -7,6 +7,7 @@ import React from "react";
 
 const Login = (props) => {
   return (
+    <form>
       <div>
         {/* {foo()} */}
         <h2>Login</h2>
@@ -24,6 +25,7 @@ const Login = (props) => {
           <button>Sumbit</button>
         </div>
       </div>
+    </form>
   )
 }
 export default Login;
