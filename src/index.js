@@ -28,6 +28,7 @@ const dialogs  = [
   {id:"9",name:"Aren"},
 
 ];
+
 const messages = [
   {id:"0", message: "Hello"},
   {id:"1", message: "Hi"},
