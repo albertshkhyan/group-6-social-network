@@ -1,12 +1,11 @@
 /* module css -um petqa ogtagorcel camelCase*/
 
-
-.imageContainer {
+.imageContainer{
     max-width: 70px;
     margin: 10px;
 }
 
-.imageContainer img {
+.imageContainer img{
     width: 100%;
 }
 

@@ -1,3 +1,4 @@
-.dialogContainer, .messagesContainer {
-    width: 400px;
+
+.dialogContainer, .messages.Container{
+    width: 300px;
 }
