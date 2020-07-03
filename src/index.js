@@ -45,7 +45,7 @@ const messages = [
 
 ReactDOM.render(
   <BrowserRouter>
-     <App posts={posts} />
+     <App posts={posts} messages ={messages} dialogs = {dialogs}/>
   </BrowserRouter>,
   document.getElementById('root')
 );

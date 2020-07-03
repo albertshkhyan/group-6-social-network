@@ -37,7 +37,15 @@ function App(props) {
             </Route> */}
             {/* <Route path="/profile/123" component={() => <h2>User ALex page</h2> }/> */}
             <Route path="/login" component={Login}/>
-            <Route exact path="/dialogs" component={Dialogs}/>
+            {/* <Route exact path="/dialogs" component={Dialogs ({dialogs})}/> */}
+            <Route exact path="/dialogs" component={() => (
+              <DialogsItem name="Messages page" dialogs={props.dialogs} />
+              )}/>
+            {/* <Route exact path="/messages" component={Messages ({messages})}/> */}
+            {/* <Route exact path="/messages" component={() => <h2>Messages</h2>}/> */}
+          <Route exact path="/messages" component={() => (
+          <Message name="Messagese page" message={props.message} />
+          )}/>
             <Route path="/dialogs/123" component={() => <h2>dialogs123</h2>}/>
             <Route path="/news" component={News}/>
             <Route path="/music" component={Music}/>

@@ -5,7 +5,6 @@ import s from"./style.module.css";
 
 
 const MyPosts = (props) => {
-    debugger;
     const postArrayComp = props.posts.map(item => <Post key={item.id} post={item.post} id={item.id}/>)
     // const postArrayComp = posts.map(item => <div key={item.id}>hello</div>)
 
