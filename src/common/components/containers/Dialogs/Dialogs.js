@@ -9,6 +9,7 @@ import s from "./style.module.css";
 
 function Dialogs(props) {
     
+    
     const dialogsArrayComp = props.dialogs.map(item => <DialogsItem key={item.id} name={item.name} id={item.id}/>)
     const messagesArrayComp = props.messages.map(item => <Message key={item.id} message={item.message} id={item.id}/>)
     return (
