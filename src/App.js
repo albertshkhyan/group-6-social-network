@@ -1,7 +1,5 @@
 import React from "react";
 import Header from "./common/components/containers/Header/Header";
-import "./App.css";//👍
-import "./media.css";
 import Dashboard from './common/components/containers/Dashboard/Dashboard';
 import Profile from "./common/components/containers/Profile/Profile";
 import News from "./common/components/containers/News/News";
@@ -19,6 +17,8 @@ import {
   Route,
 } from "react-router-dom";
 
+import "./App.css";//👍
+import "./media.css";
 
 function App(props) {
   console.log('props', props);
@@ -29,23 +29,16 @@ function App(props) {
         <Dashboard />
         <main className="main">
           <Switch>
-            <Route exact path="/profile" component={() => (
-              <Profile name="Profile page" posts={props.posts} />
+            <Route exact path="/profile" render={() => (
+              <Profile name="Profile page" posts={props.state.profilePage.posts} />
             )}/>
-            {/* <Route path="/profile">
-              <Profile name={123} />
-            </Route> */}
-            {/* <Route path="/profile/123" component={() => <h2>User ALex page</h2> }/> */}
             <Route path="/login" component={Login}/>
-            {/* <Route exact path="/dialogs" component={Dialogs ({dialogs})}/> */}
-            <Route exact path="/dialogs" component={() => (
-              <DialogsItem name="Messages page" dialogs={props.dialogs} />
-              )}/>
-            {/* <Route exact path="/messages" component={Messages ({messages})}/> */}
-            {/* <Route exact path="/messages" component={() => <h2>Messages</h2>}/> */}
-          <Route exact path="/messages" component={() => (
-          <Message name="Messagese page" message={props.message} />
-          )}/>
+            <Route exact path="/dialogs" render={() => 
+            <Dialogs 
+            dialogs={props.state.dialogsPage.dialogs}
+            messages= {props.state.dialogsPage.messages} 
+            />
+            }/>
             <Route path="/dialogs/123" component={() => <h2>dialogs123</h2>}/>
             <Route path="/news" component={News}/>
             <Route path="/music" component={Music}/>
