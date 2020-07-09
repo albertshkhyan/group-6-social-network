@@ -31,7 +31,7 @@ function App(props) {
         <main className="main">
           <Switch>
             <Route exact path="/profile" render={() => (
-              <Profile name="Profile page" posts={props.state.profilePage.posts} />
+              <Profile name="Profile page" posts={props.state.profilePage.posts} addPost={props.addPost} />
             )} />
             <Route path="/login" component={Login} />
             <Route exact path="/dialogs" render={() =>

@@ -20,7 +20,7 @@ const MyPosts = (props) => {
     // console.log('event', event.target.parentElement.previousElementSibling.children[0].value);//
     let text = event.target.value;
     // console.log('text', text);
-
+    props.addPost(text);
 
 
   };

@@ -12,11 +12,10 @@ window.state = state;
 
 ReactDOM.render(
   <BrowserRouter>
-    <App state={state} />
+    <App state={state} addPost={addPost}/>
   </BrowserRouter>,
   document.getElementById('root')
-);
-// addPost("My post!!!!")
+  );
 
 
 // function render() {
