@@ -23,6 +23,7 @@ import "./App.css";//👍
 import "./media.css";
 
 function App(props) {
+  debugger
   return (
     <div className="App">
       <Header menu={["About"]} />
@@ -36,7 +37,7 @@ function App(props) {
               addPost = {props.addPost}
               posts={props.state.profilePage.posts}
               newPostText = {props.state.profilePage.newPostText}
-              updateNewPostTex = {props.updateNewPostTex}
+              updateNewPostText = {props.updateNewPostText}
                />
             )} />
             <Route path="/login" component={Login} />

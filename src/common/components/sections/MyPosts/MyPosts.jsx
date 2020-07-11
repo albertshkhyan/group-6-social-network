@@ -8,11 +8,9 @@ const MyPosts = (props) => {
     <Post key={item.id} post={item.post} id={item.id} />)
 
     const foo = (event) => {
-
-      let text = event.target.value; 
-
+      let text = event.target.value;
       props.updateNewPostText(text)
-    };
+  };
 
     const bar = () => {
       props.addPost();
@@ -26,13 +24,13 @@ const MyPosts = (props) => {
         <textarea value = {props.newPostText} onChange = {foo}/>
       </div>
       <div>
-        <button onClick = {bar}>Add post</button>
+        <button onClick ={bar}> Add post </button>
       </div>
 
       <div className={s.postsContainer}>
         {postArrayComp}
       </div>
     </div>
-  )
-  }
+  );
+  };
 export default MyPosts;

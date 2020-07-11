@@ -50,7 +50,7 @@ const state = {
 
 export const addPost = () => {
    let id = +state.profilePage.posts[state.profilePage.posts.length - 1].id + 1 + ""; 
-   state.profilePageposts.push({
+   state.profilePage.posts.push({
         id: id,
         post: state.profilePage.newPostText
     });
