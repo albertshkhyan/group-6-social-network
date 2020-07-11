@@ -7,22 +7,17 @@ import { BrowserRouter } from "react-router-dom";
 import state, {addPost, updateNewPostText} from "./redux/state";
 // console.log('state', state);
 
-window.state = state;
+window.state = state; 
 
-function renderEntireTree(state){
-
+export function reRenderEntireTree(state){
+ 
 ReactDOM.render(
   <BrowserRouter>
-    <App state={state} addPost ={addPost} />
+    <App state={state} addPost ={addPost} updateNewPostText= {updateNewPostText } />
   </BrowserRouter>,
   document.getElementById('root')
 );
 }
-export default renderEntireTree;
-// addPost("My post!!!!")
-
-
-// function render() {
-//   // return ...
+reRenderEntireTree(state);
 // }
 // render(Component, <div id="root"></div>)
