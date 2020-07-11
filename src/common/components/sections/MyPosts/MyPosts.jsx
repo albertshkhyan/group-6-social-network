@@ -20,11 +20,15 @@ const MyPosts = (props) => {
     // console.log('event', event.target.parentElement.previousElementSibling.children[0].value);//
     let text = event.target.value;
     // console.log('text', text);
-    props.addPost(text);
+
+    props.updateNewPostText(text);
 
 
   };
+  const bar = () => {
+    props.addPost();
 
+  }
   ////when need give paramat
 
   return (
@@ -37,10 +41,10 @@ const MyPosts = (props) => {
                     foo(e, 10)
                 } } /> */}
 
-        <textarea value="alik" onChange={foo} />
+        <textarea value={props.newPostText} onChange={foo} />
       </div>
       <div>
-        <button>Add post</button>
+        <button onClick={bar}>Add post</button>
       </div>
 
       <div className={s.postsContainer}>{postArrayComp}</div>

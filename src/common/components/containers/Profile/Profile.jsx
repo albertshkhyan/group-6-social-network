@@ -8,14 +8,17 @@ import MyPosts from '../../../components/sections/MyPosts/MyPosts';
 //2
 
 function Profile(props) {
-
-
-    return <div className="Profile">
-        <ProfileInfo />
-        <MyPosts posts = {props.posts} addPost={props.addPost} />
-        
-        
-    </div>
+    return (
+        <div className="Profile">
+            <ProfileInfo />
+            <MyPosts
+                newPostText={props.newPostText}
+                addPost={props.addPost}
+                posts={props.posts}
+                updateNewPostText={props.updateNewPostText}
+            />
+        </div>
+    );
 }
 export const t = 10;
 //3

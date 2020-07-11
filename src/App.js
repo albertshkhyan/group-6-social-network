@@ -31,8 +31,14 @@ function App(props) {
         <main className="main">
           <Switch>
             <Route exact path="/profile" render={() => (
-              <Profile name="Profile page" posts={props.state.profilePage.posts} addPost={props.addPost} />
-            )} />
+              <Profile
+              debugger
+               name="Profile page" 
+               addPost={props.addPost} 
+               posts={props.state.profilePage.posts}
+               newPostText = {props.state.profilePage.newPostText}
+               updateNewPostText={props.updateNewPostText} />
+               )} />
             <Route path="/login" component={Login} />
             <Route exact path="/dialogs" render={() =>
               <Dialogs
