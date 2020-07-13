@@ -53,6 +53,8 @@ addPost () {
         id: id,
         post: this.profilePage.newPostText
     });
+    this.profilePage.newPostText = "";
+
     reRenderEntireTree(this);
 },
 
