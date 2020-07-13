@@ -43,23 +43,23 @@ const state = {
             { id: "10", name: "Aren" },
 
         ]
-    }
-
-}
+    },
 
 
-export const addPost = () => {
-   let id = +state.profilePage.posts[state.profilePage.posts.length - 1].id + 1 + ""; 
-   state.profilePage.posts.push({
+
+addPost () {
+   let id = +this.profilePage.posts[this.profilePage.posts.length - 1].id + 1 + ""; 
+   this.profilePage.posts.push({
         id: id,
-        post: state.profilePage.newPostText
+        post: this.profilePage.newPostText
     });
-    reRenderEntireTree(state);
+    reRenderEntireTree(this);
+},
+
+updateNewPostText (newPostText) {
+    this.profilePage.newPostText = newPostText;
+    reRenderEntireTree(this);
 }
 
-export const updateNewPostText = (newPostText) => {
-    state.profilePage.newPostText = newPostText;
-    reRenderEntireTree(state);
 }
-
 export default state;

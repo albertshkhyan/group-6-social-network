@@ -7,12 +7,12 @@ const MyPosts = (props) => {
   const postArrayComp = props.posts.map(item => 
     <Post key={item.id} post={item.post} id={item.id} />)
 
-    const foo = (event) => {
+    const updateNewPostText = (event) => {
       let text = event.target.value;
       props.updateNewPostText(text)
   };
 
-    const bar = () => {
+    const addPost = () => {
       props.addPost();
     }
 
@@ -21,10 +21,10 @@ const MyPosts = (props) => {
       <h2>My posts</h2>
       <div>
       
-        <textarea value = {props.newPostText} onChange = {foo}/>
+        <textarea value = {props.newPostText} onChange = {updateNewPostText}/>
       </div>
       <div>
-        <button onClick ={bar}> Add post </button>
+        <button onClick ={addPost}> Add post </button>
       </div>
 
       <div className={s.postsContainer}>

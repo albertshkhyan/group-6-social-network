@@ -4,7 +4,7 @@ import React from "react";
 import App from './App.js';
 // console.log('ReactDOM', ReactDOM);
 import { BrowserRouter } from "react-router-dom";
-import state, {addPost, updateNewPostText} from "./redux/state";
+import state from "./redux/state";
 // console.log('state', state);
 
 window.state = state; 
@@ -13,7 +13,11 @@ export function reRenderEntireTree(state){
  
 ReactDOM.render(
   <BrowserRouter>
-    <App state={state} addPost ={addPost} updateNewPostText= {updateNewPostText } />
+    <App 
+    state={state} 
+    addPost ={state.addPost.bind(state)} 
+    updateNewPostText= {state.updateNewPostText.bind(state) } 
+    />
   </BrowserRouter>,
   document.getElementById('root')
 );
