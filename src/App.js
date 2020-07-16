@@ -23,6 +23,7 @@ import "./App.css";//👍
 import "./media.css";
 
 function App(props) {
+  // debugger
   return (
     <div className="App">
       <Header menu={["About"]} />
@@ -33,10 +34,9 @@ function App(props) {
             <Route exact path="/profile" render={() => (
               <Profile 
               name="Profile page" 
-              addPost={props.addPost} 
+              dispatch = {props.dispatch}
               posts={props.state.profilePage.posts} 
               newPostText = {props.state.profilePage.newPostText}
-              updateNewPostText={props.updateNewPostText}
               />
             )} />
             <Route path="/login" component={Login} />
