@@ -14,9 +14,8 @@ window.state = state;
 
 const store = createStore(profileReducer);
 
-
 export function reRenderEntireTree(state) {
-  debugger
+  // debugger
   ReactDOM.render(
     <BrowserRouter>
       <App
@@ -31,7 +30,7 @@ export function reRenderEntireTree(state) {
 store.subscribe(() => {
   // console.log(store.getState());
   console.log('store.getState()', store.getState());
-  reRenderEntireTree(store.getState())
+  reRenderEntireTree(store.getState());
 })
 
 reRenderEntireTree(store.getState());
