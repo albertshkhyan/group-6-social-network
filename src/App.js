@@ -23,7 +23,7 @@ import "./App.css";//👍
 import "./media.css";
 
 function App(props) {
-  // debugger
+  debugger
   return (
     <div className="App">
       <Header menu={["About"]} />
@@ -32,11 +32,11 @@ function App(props) {
         <main className="main">
           <Switch>
             <Route exact path="/profile" render={() => (
-              <Profile 
-              name="Profile page" 
-              dispatch = {props.dispatch}
-              posts={props.state.profilePage.posts} 
-              newPostText = {props.state.profilePage.newPostText}
+              <Profile
+                name="Profile page"
+                dispatch={props.dispatch}
+                posts={props.state.profilePage.posts}
+                newPostText={props.state.profilePage.newPostText}
               />
             )} />
             <Route path="/login" component={Login} />

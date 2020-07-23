@@ -8,6 +8,7 @@ import MyPosts from "../../../components/sections/MyPosts/MyPosts";
 //2
 
 function Profile(props) {
+  debugger
   return (
     <div className="Profile">
       <ProfileInfo />
