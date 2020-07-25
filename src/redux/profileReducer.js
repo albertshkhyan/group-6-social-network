@@ -39,7 +39,7 @@ const profileReducer = (state = initialState, action) => {
 ////action Createors
 //action - da obyekt e vory petqa unena minimum type hatkutyuny
 //action creatory -  functia e vory petqa veradardzni action
-
+ // case AD_POST//give error
 const addPostCreator = () => {//action Createors
     return {type: ADD_POST};//return action
 }
