@@ -14,14 +14,14 @@ window.state = state;
 
 const store = createStore(profileReducer);
 
-export function reRenderEntireTree(state) {
-  // debugger
+export function reRenderEntireTree(store) {
   ReactDOM.render(
     <BrowserRouter>
-      <App
+      {/* <App
         state={state}
-        dispatch={store.dispatch}
-      />
+        dispatch={store.dispatch}    
+      /> */}
+        <App store={store} />
     </BrowserRouter>,
     document.getElementById('root')
   );
@@ -30,10 +30,10 @@ export function reRenderEntireTree(state) {
 store.subscribe(() => {
   // console.log(store.getState());
   console.log('store.getState()', store.getState());
-  reRenderEntireTree(store.getState());
+  reRenderEntireTree(store);
 })
 
-reRenderEntireTree(store.getState());
+reRenderEntireTree(store);
 
 
 
