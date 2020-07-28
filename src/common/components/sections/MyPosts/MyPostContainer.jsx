@@ -2,6 +2,9 @@ import React from "react";
 
 import { updateNewPostCreator, addPostCreator } from "../../../../redux/profileReducer";
 import MyPosts from './MyPosts';
+import MyConext from '../../../../myContext';
+console.log('MyConext', MyConext);
+
 
 //container comp - shpvuma redux-i het (orinak dipsatch a anum)
 const MyPostsContainer = (props) => {
@@ -13,12 +16,19 @@ const MyPostsContainer = (props) => {
     };
 
   return (
-        <MyPosts 
-        newPostText={props.newPostText}
-        posts={props.posts}  
-        addPost = {addPost} 
-        updateNewPostText={updateNewPostText}
-        />
+    <MyConext.Consumer>
+      {(store) => {
+        debugger
+               return (
+                 <MyPosts 
+               newPostText={props.newPostText}
+               posts={props.posts}  
+               addPost = {addPost} 
+               updateNewPostText={updateNewPostText}
+               />
+               )
+        }}
+      </MyConext.Consumer>
   );
 };
 export default MyPostsContainer;

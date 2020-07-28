@@ -14,9 +14,9 @@ function Profile(props) {
     <div className="Profile">
       <ProfileInfo />
       <MyPostsContainer  
-        newPostText={props.newPostText}
-        posts={props.posts}
-        dispatch = {props.dispatch} 
+        // newPostText={props.newPostText}
+        // posts={props.posts}
+        // dispatch = {props.dispatch} 
         />
     </div>
   );
