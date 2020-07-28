@@ -6,7 +6,7 @@ const initialState = {
             { id: "4", post: "It's my first posts" },
             { id: "5", post: "Hi, how are you?" },
         ],
-        newPostText: "",
+        newPostText: "Barev Vig jan",
 }
 
 ///action type erbvor veragrum enq popoxakani da ognum e mez hetaga sxalnerix xusapelu hamar
@@ -17,12 +17,12 @@ const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT";
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST: {//ete error  lini kasi -> is not defined, husuma inch petqa lini action type-y
-            let id = +state.posts[state.posts.length - 1].id + 1 + "";
+            // let id = +state.posts[state.posts.length - 1].id + 1 + "";
             return {
                 ...state,
                 //push aneluc heto petqa datarkel newPostText
                 posts: [...state.posts, {
-                    id,
+                    id: state.posts.length + 1 + '',
                     post: state.newPostText
                 }],
                 newPostText : ""

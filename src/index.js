@@ -7,12 +7,19 @@ import { BrowserRouter } from "react-router-dom";
 
 import state from "./redux/state";
 
-import { createStore } from "redux";
+import { createStore, combineReducers } from "redux";
 import profileReducer from './redux/profileReducer';
+import dialogsReducer from './redux/dialogsReducer';
 
 window.state = state;
 
-const store = createStore(profileReducer);
+const combindRedc = combineReducers({
+  profileReducer,
+  dialogsReducer
+});
+
+const store = createStore(combindRedc);
+console.log('store.getState()', store.getState());
 
 export function reRenderEntireTree(store) {
   ReactDOM.render(
