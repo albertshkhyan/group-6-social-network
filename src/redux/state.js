@@ -1,4 +1,8 @@
 //BLL - store (shop ===  redux === store)
+
+import {reRenderEntireTree} from "../index";
+console.log('reRenderEntireTree', reRenderEntireTree);
+
 const state = {
     profilePage: {
         posts: [
@@ -8,10 +12,9 @@ const state = {
             { id: "4", post: "It's my first posts" },
             { id: "5", post: "Hi, how are you?" },
 
-
         ],
+        newPostText : "",
     },
-
     dialogsPage: {
         messages: [
             { id: "1", message: "Hello" },
@@ -39,16 +42,36 @@ const state = {
             { id: "10", name: "Aren" },
 
         ]
+    },
+
+
+    addPost() {
+        let id = +this.profilePage.posts[this.profilePage.posts.length - 1].id + 1 + "";
+        this.profilePage.posts.push({
+            id: id,
+            post: this.profilePage.newPostText
+        });
+        this.profilePage.newPostText = "";
+
+        reRenderEntireTree(this);
+    },
+    updateNewPostText (newPostText) {
+        this.profilePage.newPostText = newPostText;
+        reRenderEntireTree(this);
+    
     }
 
 }
+//action
+// export const addPost = () => {
+//     let id = +state.profilePage.posts[state.profilePage.posts.length - 1].id + 1 + "";
+//     state.profilePage.posts.push({
+//         id: id,
+//         post: state.profilePage.newPostText
+//     });
+//     reRenderEntireTree(state);
+// }
 
 
-export const addPost = (text) => {
-    state.profilePage.posts.push({
-        id: "6",
-        post: text
-    })
-}
 
 export default state;

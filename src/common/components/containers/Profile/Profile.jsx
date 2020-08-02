@@ -1,22 +1,24 @@
 //1
-import React from 'react';
+import React from "react";
 
 import "./style.css";
-import ProfileInfo from './ProfileInfo';
-import MyPosts from '../../../components/sections/MyPosts/MyPosts';
+import ProfileInfo from "./ProfileInfo";
+import MyPostsContainer from './../../sections/MyPosts/MyPostContainer';
+console.log('MyPostsContainer', MyPostsContainer);
 
 //2
 
 function Profile(props) {
-
-
-    return <div className="Profile">
-        <ProfileInfo />
-        <MyPosts posts = {props.posts} />
-        
-        
+  // debugger
+  return (
+    <div className="Profile">
+      <ProfileInfo />
+      <MyPostsContainer  
+        // newPostText={props.newPostText}
+        // posts={props.posts}
+        // dispatch = {props.dispatch} 
+        />
     </div>
+  );
 }
-export const t = 10;
-//3
 export default Profile;

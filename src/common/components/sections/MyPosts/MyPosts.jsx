@@ -7,40 +7,23 @@ const MyPosts = (props) => {
   const postArrayComp = props.posts.map((item) => (
     <Post key={item.id} post={item.post} id={item.id} />
   ));
-  // const postArrayComp = posts.map(item => <div key={item.id}>hello</div>)
 
-  // let myRef = React.createRef();
-  // const foo = () => {
-  // console.log(myRef);
-  // alert( myRef.current.value)
-  // }
-
-  ////without ref
-  const foo = (event) => {
-    // console.log('event', event.target.parentElement.previousElementSibling.children[0].value);//
+  const updateNewPostText = (event) => {
     let text = event.target.value;
-    // console.log('text', text);
-
-
-
+    props.updateNewPostText(text)
   };
-
-  ////when need give paramat
+  const addPost = () => {
+    props.addPost();
+  };
 
   return (
     <div className={s.MyPosts}>
       <h2>My posts</h2>
       <div>
-        {/* <textarea id="a1">karam inc vor  ban grem</textarea> */}
-        {/* <textarea ref={myRef}/> */}
-        {/* <textarea onChange={ function(e) {
-                    foo(e, 10)
-                } } /> */}
-
-        <textarea value="alik" onChange={foo} />
+        <textarea value={props.newPostText} onChange={updateNewPostText} />
       </div>
       <div>
-        <button>Add post</button>
+        <button onClick={addPost}>Add post</button>
       </div>
 
       <div className={s.postsContainer}>{postArrayComp}</div>
