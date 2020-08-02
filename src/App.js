@@ -23,8 +23,6 @@ import "./App.css";//👍
 import "./media.css";
 
 function App(props) {
-  // debugger
-  debugger
 
   return (
     <div className="App">

@@ -2,33 +2,32 @@ import React from "react";
 
 import { updateNewPostCreator, addPostCreator } from "../../../../redux/profileReducer";
 import MyPosts from './MyPosts';
-import MyConext from '../../../../myContext';
-console.log('MyConext', MyConext);
+import MyContext from '../../../../myContext';
+// console.log('MyConext', MyConext);
 
 
 //container comp - shpvuma redux-i het (orinak dipsatch a anum)
 const MyPostsContainer = (props) => {
+  return (
+    <MyContext.Consumer>
+      {(store) => {
+        const state = store.getState().profileReducer;
     const updateNewPostText = (text) => {
-        props.dispatch(updateNewPostCreator(text));
+        store.dispatch(updateNewPostCreator(text));
       };
     const addPost = () => {
-    props.newPostText && props.dispatch(addPostCreator());//problem - type-i masin anhagstanum enq
+    state.newPostText && store.dispatch(addPostCreator());//problem - type-i masin anhagstanum enq
     };
-
-  return (
-    <MyConext.Consumer>
-      {(store) => {
-        debugger
-               return (
+              return (
                  <MyPosts 
                newPostText={props.newPostText}
-               posts={props.posts}  
+               posts={state.posts}  
                addPost = {addPost} 
                updateNewPostText={updateNewPostText}
                />
                )
         }}
-      </MyConext.Consumer>
+      </MyContext.Consumer>
   );
 };
 export default MyPostsContainer;
