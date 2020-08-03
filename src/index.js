@@ -11,7 +11,6 @@ import { createStore, combineReducers } from "redux";
 import profileReducer from './redux/profileReducer';
 import dialogsReducer from './redux/dialogsReducer';
 import MyConext from "./myContext";
-console.log('MyConext', MyConext);
 
 
 
@@ -23,15 +22,23 @@ const combindRedc = combineReducers({
 });
 
 const store = createStore(combindRedc);
+// console.log('store', store);
 
 
-export function reRenderEntireTree(store) {
-  debugger
+function Provider(props) {
+  return (
+    <MyConext.Provider value={props.store}>
+        {props.children} {/*  <App /> */}
+    </MyConext.Provider>
+  )
+}
+
+export function reRenderEntireTree(store) {  
   ReactDOM.render(
     <BrowserRouter>
-      <MyConext.Provider store={store}>
+      <Provider store={store}>
         <App />
-      </MyConext.Provider>
+      </Provider>
     </BrowserRouter>
     ,
     document.getElementById('root')

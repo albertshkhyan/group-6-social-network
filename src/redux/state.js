@@ -1,7 +1,6 @@
 //BLL - store (shop ===  redux === store)
 
 import {reRenderEntireTree} from "../index";
-console.log('reRenderEntireTree', reRenderEntireTree);
 
 const state = {
     profilePage: {

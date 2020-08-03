@@ -24,7 +24,6 @@ import "./media.css";
 
 function App(props) {
   // debugger
-  debugger
 
   return (
     <div className="App">
