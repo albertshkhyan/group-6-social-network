@@ -5,35 +5,28 @@ import App from './App.js';
 // console.log('ReactDOM', ReactDOM);
 import { BrowserRouter } from "react-router-dom";
 
-import state from "./redux/state";
-
-import { createStore, combineReducers } from "redux";
-import profileReducer from './redux/profileReducer';
-import dialogsReducer from './redux/dialogsReducer';
-import MyConext from "./myContext";
+import {Provider} from "react-redux";
+import store from "./store/index";
 
 
+// import MyConext from "./myContext";
 
-// window.state = state;
 
-const combindRedc = combineReducers({
-  profileReducer,
-  dialogsReducer
-});
 
-const store = createStore(combindRedc);
+
+
 // console.log('store', store);
 
 
-function Provider(props) {
-  return (
-    <MyConext.Provider value={props.store}>
-        {props.children} {/*  <App /> */}
-    </MyConext.Provider>
-  )
-}
+// function Provider(props) {
+//   return (
+//     <MyConext.Provider value={props.store}>
+//         {props.children} {/*  <App /> */}
+//     </MyConext.Provider>
+//   )
+// }
 
-export function reRenderEntireTree(store) {  
+// export function reRenderEntireTree(store) {  
   ReactDOM.render(
     <BrowserRouter>
       <Provider store={store}>
@@ -43,15 +36,20 @@ export function reRenderEntireTree(store) {
     ,
     document.getElementById('root')
   );
-}
+
 
 store.subscribe(() => {
-  // console.log(store.getState());
-  console.log('store.getState()', store.getState());
-  reRenderEntireTree(store);
-})
+  window.state = store.getState();
+});
 
-reRenderEntireTree(store);
+// }
+
+// store.subscribe(() => {
+//   // console.log(store.getState());
+//   console.log('store.getState()', store.getState());
+//   reRenderEntireTree(store);
+// })
+// reRenderEntireTree(store);
 
 
 
