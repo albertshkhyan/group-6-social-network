@@ -9,7 +9,6 @@ import Settings from "./Settings/Settings";
 import Users from "./common/components/containers/Users/Users";
 
 
-import Dialogs from './common/components/containers/Dialogs/Dialogs';
 
 import Login from './common/components/sections/Login/Login';
 
@@ -21,31 +20,24 @@ import {
 
 import "./App.css";//👍
 import "./media.css";
+import DialogsContainer from './common/components/containers/Dialogs/DialogsContainer';
 
 function App(props) {
   // debugger
 
   return (
     <div className="App">
-      <Header menu={["About"]} />
+      <Header menu="About" />
       <div className="flexible">
         <Dashboard />
         <main className="main">
           <Switch>
             <Route exact path="/profile" render={() => (
-              <Profile
-                // name="Profile page"
-                // dispatch={props.store.dispatch}
-                // posts={props.store.getState().profileReducer.posts}
-                // newPostText={props.store.getState().profileReducer.newPostText}
-              />
+              <Profile />
             )} />
             <Route path="/login" component={Login} />
             <Route exact path="/dialogs" render={() =>
-              <Dialogs
-                // dialogs={props.store.getState().dialogsReducer.dialogs}
-                // messages={props.store.getState().dialogsReducer.messages}
-              />
+              <DialogsContainer />
             } />
             <Route path="/dialogs/123" component={() => <h2>dialogs123</h2>} />
             <Route path="/news" component={News} />

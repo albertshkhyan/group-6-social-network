@@ -14,7 +14,7 @@ import MyConext from "./myContext";
 
 
 
-window.state = state;
+// window.state = state;
 
 const combindRedc = combineReducers({
   profileReducer,

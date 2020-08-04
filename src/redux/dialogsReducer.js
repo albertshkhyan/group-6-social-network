@@ -29,7 +29,7 @@ const initialState = {
     { id: "10", name: "Aren" },
 
   ],
-  newMessageBody: "Barev"
+  newMessageBody: ""
 
 }
 
