@@ -37,26 +37,8 @@ import store from "./store/index";
     document.getElementById('root')
   );
 
-
+window.state = store.getState();
 store.subscribe(() => {
   window.state = store.getState();
 });
 
-// }
-
-// store.subscribe(() => {
-//   // console.log(store.getState());
-//   console.log('store.getState()', store.getState());
-//   reRenderEntireTree(store);
-// })
-// reRenderEntireTree(store);
-
-
-
-
-
-
-// function render() {
-//   // return ...
-// }
-// render(Component, <div id="root"></div>)
