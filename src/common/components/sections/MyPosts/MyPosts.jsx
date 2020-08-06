@@ -13,7 +13,10 @@ const MyPosts = (props) => {
     props.updateNewPostText(text)
   };
   const addPost = () => {
-    props.addPost();
+    props.newPostText && props.addPost();
+    // if(props.newPostText !== "") {
+    //   props.addPost()
+    // }
   };
 
   return (

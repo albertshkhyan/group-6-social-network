@@ -47,7 +47,6 @@ const mapStateToProps = (state) => {//store.getState() - return state
 const mapDispatchToProps = (dispatch) => {//store.dispatch.bind
     return {
         newMessageBodyCB : (event) => {
-            // debugger
           dispatch(newMessageBodyAC(event.target.value));
         },
         addnewMessageBodyCB : () => {

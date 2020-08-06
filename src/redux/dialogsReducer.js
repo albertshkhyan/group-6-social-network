@@ -53,8 +53,8 @@ const dialogsReducer = (state = initialState, action) => {
         messages: [...state.messages, {
           id: state.messages.length + 1 + '',
           message: state.newMessageBody
-        }]
-        // messages: [{...state.messages[0]}]
+        }],
+        newMessageBody: ""
       }
     }
 

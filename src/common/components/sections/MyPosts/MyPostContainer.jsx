@@ -38,14 +38,14 @@ import { connect } from "react-redux";
 const mapStateToProps = (state) => {//store.getState()
   console.log('state', state);
   return {
-    newPostText : 10,
-    posts : 10
+    newPostText : state.profileReducer.newPostText,
+    posts : state.profileReducer.posts
     // addPost -> dispatch
     // updateNewPostText -> dispatch
   }
 }
 const mapDispatchToProps = (dispatch) => {
-  console.log('dispatch', dispatch);
+  // console.log('dispatch', dispatch);
   return {
     addPost : () => {
       dispatch(addPostCreator()); //problem - type-i masin anhagstanum enq

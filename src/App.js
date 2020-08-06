@@ -2,7 +2,6 @@ import React from "react";
 import Header from "./common/components/containers/Header/Header";
 
 import Dashboard from './common/components/containers/Dashboard/Dashboard';
-import Profile from "./common/components/containers/Profile/Profile";
 import News from "./common/components/containers/News/News";
 import Music from "./common/components/containers/Music/Music";
 import Settings from "./Settings/Settings";
@@ -21,6 +20,7 @@ import {
 import "./App.css";//👍
 import "./media.css";
 import DialogsContainer from './common/components/containers/Dialogs/DialogsContainer';
+import Profile from './common/components/containers/Profile/Profile';
 
 function App(props) {
   // debugger

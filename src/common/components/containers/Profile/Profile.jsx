@@ -8,7 +8,7 @@ import MyPostsContainer from './../../sections/MyPosts/MyPostContainer';
 //2
 
 function Profile(props) {
-  // debugger
+  
   return (
     <div className="Profile">
       <ProfileInfo />
