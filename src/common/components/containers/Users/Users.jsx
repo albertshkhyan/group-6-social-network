@@ -17,9 +17,15 @@ class Users extends React.Component {
     super(props);
     console.log("hello");
     console.log(props.users);
-    axios.get("https://social-network.samuraijs.com/api/1.0/users?count=5&page=2").then((response) => {
-      this.props.setUsers(response.data.items);
-    });
+    // if (this.props.users.length === 0) {//paymany karox enq chgrel qani vor contructori mej harcumy mi angam e texi unenum
+      axios
+        .get(
+          "https://social-network.samuraijs.com/api/1.0/users?count=5&page=2"
+        )
+        .then((response) => {
+          this.props.setUsers(response.data.items);
+        });
+    // }
   }
 
   followOnClick(id) {
@@ -60,18 +66,17 @@ class Users extends React.Component {
   }
 }
 
-const  mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
   return {
-    users: state.usersReducer.users
-  }
-}
+    users: state.usersReducer.users,
+  };
+};
 const mapDispatchToProps = (dispatch) => {
   return {
     setUsers: (users) => dispatch(setUsersAC(users)),
     follow: (id) => dispatch(followAC(id)),
     unfollow: (id) => dispatch(unfollowAC(id)),
-  }
-}
-
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Users);
