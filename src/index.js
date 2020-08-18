@@ -11,10 +11,6 @@ import store from "./store/index";
 
 // import MyConext from "./myContext";
 
-
-
-
-
 // console.log('store', store);
 
 

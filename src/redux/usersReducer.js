@@ -2,31 +2,45 @@ const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
 const SET_USERS = "SET_USERS";
 
+// const users = fetch("")
 
 const initialState = {//users object
     users: [
-        {
-            "name": "GrinMorg",
-            "id": 9741,
-            "uniqueUrlName": null,
-            "photos": {
-                "small": null,
-                "large": null
-            },
-            "status": null,
-            "followed": false
-        },
-        {
-            "name": "Nstotti",
-            "id": 9740,
-            "uniqueUrlName": null,
-            "photos": {
-                "small": null,
-                "large": null
-            },
-            "status": null,
-            "followed": true
-        },
+        // {
+        //     "name": "GrinMorg",
+        //     "id": 9741,
+        //     "uniqueUrlName": null,
+        //     "photos": {
+        //         "small": null,
+        //         "large": null
+        //     },
+        //     "status": null,
+        //     "followed": false
+        // },
+        // {
+        //     "name": "Nstotti",
+        //     "id": 9740,
+        //     "uniqueUrlName": null,
+        //     "photos": {
+        //         "small": null,
+        //         "large": null
+        //     },
+        //     "status": null,
+        //     "followed": true
+        // },
+        
+        // {
+        //     "name": "Nstotti",
+        //     "id": 9740,
+        //     "uniqueUrlName": null,
+        //     "photos": {
+        //         "small": null,
+        //         "large": null
+        //     },
+        //     "status": null,
+        //     "followed": true
+        // },
+        
     ]
 }
 
@@ -38,7 +52,7 @@ const usersReducer = (state = initialState, action) => {
                 if (u.id === action.id) {
                     return {
                         ...u,
-                        followed: true
+                        followed: false
                     }
                 }
                 return u;
@@ -51,7 +65,7 @@ const usersReducer = (state = initialState, action) => {
                 if (u.id === action.id) {
                     return {
                         ...u,
-                        followed: false
+                        followed: true
                     }
                 }
                 return u;
@@ -69,7 +83,7 @@ const usersReducer = (state = initialState, action) => {
 }
 
 //action createors
-const followAC = id => {
+export const followAC = id => {
     return {
         type: FOLLOW,
         // id: id
@@ -77,7 +91,7 @@ const followAC = id => {
     }
 }
 // followAC(true);
-const unfollowAC = id => {
+export const unfollowAC = id => {
     return {
         type: UNFOLLOW,
         // id: id
@@ -86,8 +100,7 @@ const unfollowAC = id => {
 }
 // followAC(true);
 
-
-const setUsersAC = (users) => {
+export const setUsersAC = (users) => {
     return {
         type: SET_USERS,
         users//users: users

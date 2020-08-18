@@ -2,47 +2,76 @@ import React from "react";
 
 import "./style.css";
 import { connect } from "react-redux";
+import {
+  followAC,
+  unfollowAC,
+  setUsersAC,
+} from "../../../../redux/usersReducer";
 
-const Users = (props) => {
-  console.log("props", props);
-  return (
-    <div className="Users">
-      <h2>Users</h2>
-      <div className="users-container">
-        {props.users.map((u) => {
-          return (
-            <div className="user-content">
-              <div className="image-container">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/User_icon-cp.svg/1200px-User_icon-cp.svg.png"
-                  alt=""
-                />
-              </div>
+import * as axios from "axios";
 
-              <div className="user-info">
-                <span>{u.name}</span>
-              </div>
+//class component
+//all class component must extend React.Component
+class Users extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log("hello");
+    console.log(props.users);
+    axios.get("https://social-network.samuraijs.com/api/1.0/users?count=5&page=2").then((response) => {
+      this.props.setUsers(response.data.items);
+    });
+  }
 
-              <div className="follow_or_unfollow-container flexible jCenter">
-                {
-                  u.followed ? <button>Follow</button> : <button>Unfollow</button>
-                }
-                
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-};
+  followOnClick(id) {
+    this.props.unfollow(id);
+  }
 
-const mapSateToProps = (state) => {
+  render() {
+    return this.props.users.map((u) => {
+      return (
+        <div key={u.id} className="user-content">
+          <div className="image-container">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/User_icon-cp.svg/1200px-User_icon-cp.svg.png"
+              alt=""
+            />
+          </div>
+
+          <div className="user-info">
+            <span>{u.name}</span>
+          </div>
+
+          <div className="follow_or_unfollow-container flexible jCenter">
+            {u.followed ? (
+              <button onClick={() => this.followOnClick(u.id)}>Follow</button>
+            ) : (
+              <button
+                onClick={() => {
+                  this.props.unfollow(u.id);
+                }}
+              >
+                Unfollow
+              </button>
+            )}
+          </div>
+        </div>
+      );
+    });
+  }
+}
+
+const  mapStateToProps = (state) => {
   return {
-    users: state.usersReducer.users,
-  };
-};
+    users: state.usersReducer.users
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setUsers: (users) => dispatch(setUsersAC(users)),
+    follow: (id) => dispatch(followAC(id)),
+    unfollow: (id) => dispatch(unfollowAC(id)),
+  }
+}
 
-// const 
-const UserContainer = connect(mapSateToProps, mapDispatchToProps)(Users);
-export default UserContainer;
+
+export default connect(mapStateToProps, mapDispatchToProps)(Users);
