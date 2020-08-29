@@ -6,6 +6,7 @@ import {
   followAC,
   unfollowAC,
   setUsersAC,
+  setTotalCountAC,
 } from "../../../../redux/usersReducer";
 
 import * as axios from "axios";
@@ -17,15 +18,19 @@ class Users extends React.Component {
     super(props);
     console.log("hello");
     console.log(props.users);
-    // if (this.props.users.length === 0) {//paymany karox enq chgrel qani vor contructori mej harcumy mi angam e texi unenum
+  }
+
+  componentDidMount() {
+    if (this.props.users.length === 0) {
       axios
         .get(
           "https://social-network.samuraijs.com/api/1.0/users?count=5&page=2"
         )
         .then((response) => {
+          this.props.setTotalCount(response.data.totalCount);
           this.props.setUsers(response.data.items);
         });
-    // }
+    }
   }
 
   followOnClick(id) {
@@ -33,36 +38,47 @@ class Users extends React.Component {
   }
 
   render() {
-    return this.props.users.map((u) => {
-      return (
-        <div key={u.id} className="user-content">
-          <div className="image-container">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/User_icon-cp.svg/1200px-User_icon-cp.svg.png"
-              alt=""
-            />
-          </div>
+    return (
+      <div>
+        {/* pagination */}
+        {[1, 2, 3, 4].map((item) => {
+          return <span>{item}</span>;
+        })}
+        {/* users */}
+        {this.props.users.map((u) => {
+          return (
+            <div key={u.id} className="user-content">
+              <div className="image-container">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/User_icon-cp.svg/1200px-User_icon-cp.svg.png"
+                  alt=""
+                />
+              </div>
 
-          <div className="user-info">
-            <span>{u.name}</span>
-          </div>
+              <div className="user-info">
+                <span>{u.name}</span>
+              </div>
 
-          <div className="follow_or_unfollow-container flexible jCenter">
-            {u.followed ? (
-              <button onClick={() => this.followOnClick(u.id)}>Follow</button>
-            ) : (
-              <button
-                onClick={() => {
-                  this.props.unfollow(u.id);
-                }}
-              >
-                Unfollow
-              </button>
-            )}
-          </div>
-        </div>
-      );
-    });
+              <div className="follow_or_unfollow-container flexible jCenter">
+                {u.followed ? (
+                  <button onClick={() => this.followOnClick(u.id)}>
+                    Follow
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      this.props.unfollow(u.id);
+                    }}
+                  >
+                    Unfollow
+                  </button>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 }
 
@@ -76,6 +92,7 @@ const mapDispatchToProps = (dispatch) => {
     setUsers: (users) => dispatch(setUsersAC(users)),
     follow: (id) => dispatch(followAC(id)),
     unfollow: (id) => dispatch(unfollowAC(id)),
+    setTotalCount: (totalCount) => dispatch(setTotalCountAC(totalCount)),
   };
 };
 
