@@ -16,3 +16,7 @@
 .image-container img  {
     width: 100%;
 }
+
+.active-page {
+    font-weight: bold;
+}

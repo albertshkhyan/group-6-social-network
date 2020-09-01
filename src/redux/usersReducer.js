@@ -11,7 +11,7 @@ const initialState = {//users object
     users: [
 
     ],
-    totalCount: 0,//serverum gtnvwx userneri qanaky (;ength)
+    totalCount: 3000,//serverum gtnvwx userneri qanaky (length)
     currenPage: 1,//nerkayis ejy
     pageSize: 5,//qani hat element petqa cucadrvi amen ejin
 
@@ -57,7 +57,7 @@ const usersReducer = (state = initialState, action) => {
         }
         case SET_CURRENT_PAGE: return {
             ...state,
-            currenPage: action.currenPage
+            currenPage: action.currentPage
         }
         default: return state;
     }
@@ -93,8 +93,8 @@ export const setTotalCountAC = (totalCount) => {
     );
 }
 
-export const setCurrentPage = (currentPage) => {
-    return { type: SET_CURRENT_PAGE, currentPage}
+export const setCurrentPage = (cp) => {
+    return { type: SET_CURRENT_PAGE, currentPage: cp}
 }
 
 export default usersReducer;
