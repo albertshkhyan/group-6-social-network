@@ -13,7 +13,7 @@ import {
 import {isFetchingAC} from "../../../../redux/appReducer"
 
 import * as axios from "axios";
-import Preloader from "./../../../sections/Preloader./Preloader";
+import Preloader from "../../../sections/Preloader/Preloader";
 
 //class component
 //all class component must extend React.Component
