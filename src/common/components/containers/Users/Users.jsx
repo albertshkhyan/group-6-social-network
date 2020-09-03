@@ -32,7 +32,8 @@ class Users extends React.Component {
       axios
         .get(
           // `ttps://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}&page=${currentPage}`
-          `https://api.github.com/users`
+          // `https://api.github.com/users`
+          `https://reqres.in/api/users?page=2`
         )
         .then((response) => {
           this.props.isFetchingAC(false);//
@@ -64,6 +65,7 @@ class Users extends React.Component {
       limitOfPages.push(i);
     }
     // console.log('limitOfPages', limitOfPages);
+    // Array(10).fill().map((_, i) => i+1);
 
     return (
       <div>
