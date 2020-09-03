@@ -4,7 +4,7 @@ import DialogsItem from "./DialogsItem";
 import Message from "../../sections/Message/Message";
 
 import s from "./style.module.css";
-import MyConext from "../../../../myContext";
+
 
 ///stexcel DialogsContainer -> vory kshpve  store- i het , Dialogs - y sarqel pure function
 function Dialogs(props) {

@@ -1,7 +1,4 @@
-import React from "react";
 
-
-import MyConext from "../../../../myContext";
 import { addnewMessageBodyAC, newMessageBodyAC } from "../../../../redux/dialogsReducer";
 import Dialogs from './Dialogs';
 import { connect } from "react-redux";

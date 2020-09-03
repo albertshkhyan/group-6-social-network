@@ -13,17 +13,14 @@ import {
 import {isFetchingAC} from "../../../../redux/appReducer"
 
 import * as axios from "axios";
-import Preloader from "./../../../sections/Preloader./Preloader";
+import Preloader from "./../../../sections/Preloader/Preloader";
 
 //class component
 //all class component must extend React.Component
-console.log('isFetchingAC', isFetchingAC);
 
 class Users extends React.Component {
   constructor(props) {
     super(props);
-    console.log("hello");
-    console.log(props.users);
   }
 
   getUsers = (currentPage) => {
@@ -31,7 +28,7 @@ class Users extends React.Component {
       this.props.isFetchingAC(true);//
       axios
         .get(
-          // `ttps://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}&page=${currentPage}`
+          // `https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}&page=${currentPage}`
           `https://api.github.com/users`
         )
         .then((response) => {
@@ -67,21 +64,6 @@ class Users extends React.Component {
 
     return (
       <div>
-        {/*start-  pagination - extract this component to  Pagiantion.jsx */}
-        {limitOfPages.map((item) => {
-          return (
-            <span
-              onClick={() => this.changeCurrentPage(item)}
-              key={item}
-              className={
-                item === this.props.currenPage ? "active-page" : "page"
-              }
-            >
-              {item}
-            </span>
-          );
-        })}
-        {/*end -  pagination */}
 
         {/* users */}
 
